@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
         speed += PlayerStatusHandler.Instance.statusValues.baseProjectileSpeed;
         rb.velocity = direction.normalized * speed;
 
-        StartCoroutine(SelfDestruction());
+        Invoke("SelfDestruction", lifeTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,10 +26,10 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private IEnumerator SelfDestruction()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        Destroy(this);
+    private void SelfDestruction(){
+        if(this != null){
+            Destroy(this.gameObject);
+        }
     }
 
     public void SetDir(Vector2 dir)
