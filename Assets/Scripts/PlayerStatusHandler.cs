@@ -19,7 +19,9 @@ public class PlayerStatusHandler : MonoBehaviour
 public class PlayerStatusValues{
     public int life;
     public float attackSpeed;
-    public int damage;
+    public float damage;
     public float movementSpeed;
     public float baseProjectileSpeed;
+    public float criticalChance;
+    public float criticalDamageIncrease;
 }
