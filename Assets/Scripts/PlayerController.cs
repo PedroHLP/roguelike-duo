@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private Vector3 mousePosition;
@@ -19,6 +20,9 @@ public class PlayerController : MonoBehaviour
 
     private bool canShoot;
 
+    #endregion
+
+    #region MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +44,9 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
+    #endregion
+
+    #region Methods
     private void WeaponFaceMouse()
     {
         Vector2 direction = new Vector2(mousePosition.x - playerWeaponPivot.transform.position.x, mousePosition.y - playerWeaponPivot.transform.position.y);
@@ -68,9 +75,12 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(ShootCoroutine());
 
+            int randomValue = UnityEngine.Random.Range(0, 100);
+
             Vector2 direction = new Vector2(mousePosition.x - shootOriginPoint.transform.position.x, mousePosition.y - shootOriginPoint.transform.position.y);
             Projectile projectile = Instantiate(projectileObject, shootOriginPoint.transform.position, quaternion.identity).GetComponent<Projectile>();
             projectile.SetDir(direction);
+            if (randomValue <= statusHandler.statusValues.criticalChance) projectile.isCritical = true;
         }
     }
 
@@ -96,4 +106,5 @@ public class PlayerController : MonoBehaviour
         canShoot = true;
     }
 
+    #endregion
 }
