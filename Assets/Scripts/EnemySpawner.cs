@@ -60,13 +60,13 @@ public class EnemySpawner : MonoBehaviour
 
         if (spawnOnSides)
         {
-            x = Random.Range(0f, 1f) > 0.5f ? -9f : 9f;
-            y = Random.Range(-5f, 5f);
+            x = Random.Range(0f, 1f) > 0.5f ? -11f : 11f;
+            y = Random.Range(-7f, 7f);
         }
         else
         {
-            x = Random.Range(-9f, 9f);
-            y = Random.Range(0f, 1f) > 0.5f ? 5f : -5f;
+            x = Random.Range(-11f, 11f);
+            y = Random.Range(0f, 1f) > 0.5f ? 7f : -7f;
         }
 
         return new Vector3(x, y, 0f);
