@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
 
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * PlayerStatusHandler.Instance.statusValues.movementSpeed, moveDirection.y * PlayerStatusHandler.Instance.statusValues.movementSpeed);
     }
 
 }
