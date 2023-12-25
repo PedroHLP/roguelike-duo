@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: fc20c25920cd09042b801ae791a61045
+guid: f391d72bf3bb6e14f88dbe0038cbe4e6
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2413806693520163455
-    second: Circle
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,12 +48,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -68,14 +65,14 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,19 +82,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +107,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -152,92 +149,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Circle
+      name: rogueduo2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 1
+        y: 27
+        width: 6
+        height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 33, y: 128}
-        - {x: -33, y: 128}
-        - {x: -95, y: 95}
-        - {x: -128, y: 33}
-        - {x: -128, y: -33}
-        - {x: -95, y: -95}
-        - {x: -33, y: -128}
-        - {x: 33, y: -128}
-        - {x: 95, y: -95}
-        - {x: 128, y: -33}
-        - {x: 128, y: 33}
-        - {x: 95, y: 95}
-      physicsShape:
-      - - {x: 0, y: 128}
-        - {x: -39, y: 121}
-        - {x: -75, y: 103}
-        - {x: -103, y: 75}
-        - {x: -121, y: 39}
-        - {x: -128, y: 0}
-        - {x: -121, y: -39}
-        - {x: -103, y: -75}
-        - {x: -75, y: -103}
-        - {x: -39, y: -121}
-        - {x: 0, y: -128}
-        - {x: 39, y: -121}
-        - {x: 75, y: -103}
-        - {x: 103, y: -75}
-        - {x: 121, y: -39}
-        - {x: 128, y: 0}
-        - {x: 121, y: 39}
-        - {x: 103, y: 75}
-        - {x: 75, y: 103}
-        - {x: 39, y: 121}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18d3544e99f608ed0800000000000000
-      internalID: -2413806693520163455
+      spriteID: d5d833108c6bb0e45a73e17c94f5a1f7
+      internalID: 896743281
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: 33, y: 128}
-      - {x: -33, y: 128}
-      - {x: -95, y: 95}
-      - {x: -128, y: 33}
-      - {x: -128, y: -33}
-      - {x: -95, y: -95}
-      - {x: -33, y: -128}
-      - {x: 33, y: -128}
-      - {x: 95, y: -95}
-      - {x: 128, y: -33}
-      - {x: 128, y: 33}
-      - {x: 95, y: 95}
-    physicsShape:
-    - - {x: 0, y: 128}
-      - {x: -39, y: 121}
-      - {x: -75, y: 103}
-      - {x: -103, y: 75}
-      - {x: -121, y: 39}
-      - {x: -128, y: 0}
-      - {x: -121, y: -39}
-      - {x: -103, y: -75}
-      - {x: -75, y: -103}
-      - {x: -39, y: -121}
-      - {x: 0, y: -128}
-      - {x: 39, y: -121}
-      - {x: 75, y: -103}
-      - {x: 103, y: -75}
-      - {x: 121, y: -39}
-      - {x: 128, y: 0}
-      - {x: 121, y: 39}
-      - {x: 103, y: 75}
-      - {x: 75, y: 103}
-      - {x: 39, y: 121}
+    - serializedVersion: 2
+      name: rogueduo2_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 22
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f090096d8909549b5c14795e20e28f
+      internalID: -2141842839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rogueduo2_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 19
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdf0ec2212737d4e8e3980b012f5759
+      internalID: -386985961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rogueduo2_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4859edd7af3fc743ac8e67ab2fc21f0
+      internalID: 1463119943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rogueduo2_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 5
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c73fba892b6f54ca718e5587011b26
+      internalID: -1136033516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
@@ -247,7 +264,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Circle: -2413806693520163455
+      rogueduo2_0: 896743281
+      rogueduo2_1: -2141842839
+      rogueduo2_2: -386985961
+      rogueduo2_3: 1463119943
+      rogueduo2_4: -1136033516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
