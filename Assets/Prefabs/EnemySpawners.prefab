@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4500075050492562632
 Transform:
   m_ObjectHideFlags: 0
@@ -45,10 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 690242082915895615, guid: 70f581ff98da9204baebf2e3beebf6b9, type: 3}
-  initialPoolSize: 8
-  spawnInterval: 3
-  spawnRateIncreaseInterval: 10
-  spawnRateIncreaseAmount: 1
+  initialPoolSize: 2
   spawnOnSides: 0
 --- !u!1 &6410649651337439102
 GameObject:
@@ -95,10 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5819540274332721429, guid: 95713ffb5a384a34b894a591e9ecca3c, type: 3}
-  initialPoolSize: 6
-  spawnInterval: 5
-  spawnRateIncreaseInterval: 15
-  spawnRateIncreaseAmount: 2
+  initialPoolSize: 2
   spawnOnSides: 0
 --- !u!1 &7069690330405384032
 GameObject:
@@ -116,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &668775913088663376
 Transform:
   m_ObjectHideFlags: 0
@@ -145,10 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6345433440154868398, guid: e6df2355b70191c4fbdd0e86fd5060bb, type: 3}
-  initialPoolSize: 5
-  spawnInterval: 8
-  spawnRateIncreaseInterval: 25
-  spawnRateIncreaseAmount: 1
+  initialPoolSize: 1
   spawnOnSides: 0
 --- !u!1 &7655286958067027137
 GameObject:
@@ -201,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4730850936273026588
 Transform:
   m_ObjectHideFlags: 0
@@ -230,8 +221,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4069601532384540071, guid: bd3c7cd35cc2c1b44b0bbc664585a09e, type: 3}
-  initialPoolSize: 15
-  spawnInterval: 1
-  spawnRateIncreaseInterval: 8
-  spawnRateIncreaseAmount: 3
+  initialPoolSize: 3
   spawnOnSides: 1

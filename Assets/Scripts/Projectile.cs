@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     public bool isCritical;
     private Vector2 direction;
 
+    public int maxHitsOnEnemies;
+
     [SerializeField]
     private float lifeTime;
 
@@ -23,8 +25,6 @@ public class Projectile : MonoBehaviour
         rb.velocity = direction.normalized * speed;
         damage += pStatusHandler.statusValues.damage;
         Invoke("SelfDestruction", lifeTime);
-
-        isCritical = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,10 +33,17 @@ public class Projectile : MonoBehaviour
         {
             EnemyController enemy = other.GetComponent<EnemyController>();
 
-            if (!isCritical) enemy.DealDamage(damage);
-            else enemy.DealDamage(damage * pStatusHandler.statusValues.criticalDamageIncrease);
+            if (!isCritical) enemy.DealDamage(damage, isCritical);
+            else enemy.DealDamage(damage * pStatusHandler.statusValues.criticalDamageIncrease, isCritical);
 
             OnDamageEnemy?.Invoke(enemy);
+
+            maxHitsOnEnemies--;
+
+            if (maxHitsOnEnemies <= 0 && maxHitsOnEnemies != -100)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 

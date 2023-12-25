@@ -6,42 +6,18 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public int initialPoolSize = 10;
-    public float spawnInterval = 2f;
-    public float spawnRateIncreaseInterval = 10f;
-    public int spawnRateIncreaseAmount = 1;
-
     private List<GameObject> enemyPool;
-    private float nextSpawnTime;
-    private float nextSpawnRateIncreaseTime;
 
     [SerializeField]
     private bool spawnOnSides;
 
-    void Start()
+    private void Start()
     {
         InitializePool();
-
-        nextSpawnTime = Time.time + spawnInterval;
-
-        nextSpawnRateIncreaseTime = Time.time + spawnRateIncreaseInterval;
+        SpawnEnemy();
     }
 
-    void Update()
-    {
-        if (Time.time >= nextSpawnTime)
-        {
-            SpawnEnemy();
-            nextSpawnTime = Time.time + spawnInterval;
-        }
-
-        if (Time.time >= nextSpawnRateIncreaseTime)
-        {
-            IncreaseSpawnRate();
-            nextSpawnRateIncreaseTime = Time.time + spawnRateIncreaseInterval;
-        }
-    }
-
-    void InitializePool()
+    private void InitializePool()
     {
         enemyPool = new List<GameObject>();
 
@@ -51,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void CreateEnemy()
+    private void CreateEnemy()
     {
         GameObject enemy = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
         enemy.GetComponent<EnemyController>().SetMyEnemySpawner(this);
@@ -59,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         enemyPool.Add(enemy);
     }
 
-    void SpawnEnemy()
+    public void SpawnEnemy()
     {
         GameObject enemy = GetInactiveEnemy();
 
@@ -73,12 +49,12 @@ public class EnemySpawner : MonoBehaviour
         enemy.SetActive(true);
     }
 
-    GameObject GetInactiveEnemy()
+    private GameObject GetInactiveEnemy()
     {
         return enemyPool.Find(enemy => !enemy.activeSelf);
     }
 
-    Vector3 GetRandomSpawnPosition()
+    private Vector3 GetRandomSpawnPosition()
     {
         float x, y;
 
@@ -94,12 +70,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return new Vector3(x, y, 0f);
-    }
-
-    void IncreaseSpawnRate()
-    {
-        spawnInterval -= spawnRateIncreaseAmount;
-        spawnInterval = Mathf.Max(spawnInterval, 0.5f);
     }
 
     public void KillEnemy(GameObject enemy)

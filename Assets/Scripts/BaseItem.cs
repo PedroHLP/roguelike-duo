@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IItem{
+public abstract class BaseItem : MonoBehaviour
+{
+    public SOItem itemSO;
+
     public abstract PlayerStatusValues OnGetItem(PlayerStatusValues values);
     public abstract void OnPlayerShoot(Projectile shoottedBullet, GameObject shootPoint);
     public abstract void OnEverySecond();
@@ -12,5 +15,8 @@ public interface IItem{
     public abstract float OnPlayerCollectXP(float gainedXP);
     public abstract void OnPlayerCriticalHit(Projectile shoottedBullet, GameObject shootPoint);
 
-    public abstract SOItem GetItemDetails();
+    public SOItem GetItemDetails()
+    {
+        return itemSO;
+    }
 }

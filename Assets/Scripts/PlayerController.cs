@@ -75,12 +75,13 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(ShootCoroutine());
 
-            int randomValue = UnityEngine.Random.Range(0, 100);
+            int criticalRandomValue = UnityEngine.Random.Range(0, 100);
 
             Vector2 direction = new Vector2(mousePosition.x - shootOriginPoint.transform.position.x, mousePosition.y - shootOriginPoint.transform.position.y);
             Projectile projectile = Instantiate(projectileObject, shootOriginPoint.transform.position, quaternion.identity).GetComponent<Projectile>();
             projectile.SetDir(direction);
-            if (randomValue <= statusHandler.statusValues.criticalChance) projectile.isCritical = true;
+            projectile.isCritical = criticalRandomValue <= statusHandler.statusValues.criticalChance;
+
         }
     }
 
