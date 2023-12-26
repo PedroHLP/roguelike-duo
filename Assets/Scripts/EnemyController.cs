@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -13,6 +14,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     private bool followAndShoot;
+
+    private float startingLife;
 
     private Transform playerTransform;
     private Rigidbody2D rb;
@@ -37,12 +40,19 @@ public class EnemyController : MonoBehaviour
 
         speedBuff = 1;
         speedDebuff = 1;
+
+        if (startingLife == 0)
+            startingLife = life;
     }
 
     private void Update()
     {
+        if (!canWalk)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
 
-        if (!canWalk) return;
         if (!followAndShoot)
         {
             Vector2 direction = (playerTransform.position - transform.position).normalized;
@@ -62,6 +72,16 @@ public class EnemyController : MonoBehaviour
                 rb.velocity = direction * (speed * speedBuff / speedDebuff);
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        Material mat = GetComponent<Renderer>().material;
+        mat.DisableKeyword("HITEFFECT_ON");
+        speedDebuff = 1;
+        
+        if (startingLife != 0)
+            life = startingLife;
     }
 
     private void Shoot()

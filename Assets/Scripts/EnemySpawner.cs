@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private bool spawnOnSides;
 
+    public Action OnEnemySpawn;
+    public Action OnEnemyDie;
+
     private void Start()
     {
         InitializePool();
-        SpawnEnemy();
     }
 
     private void InitializePool()
@@ -47,6 +50,8 @@ public class EnemySpawner : MonoBehaviour
 
         enemy.transform.position = GetRandomSpawnPosition();
         enemy.SetActive(true);
+
+        OnEnemySpawn?.Invoke();
     }
 
     private GameObject GetInactiveEnemy()
@@ -60,13 +65,13 @@ public class EnemySpawner : MonoBehaviour
 
         if (spawnOnSides)
         {
-            x = Random.Range(0f, 1f) > 0.5f ? -11f : 11f;
-            y = Random.Range(-7f, 7f);
+            x = UnityEngine.Random.Range(0f, 1f) > 0.5f ? -11f : 11f;
+            y = UnityEngine.Random.Range(-7f, 7f);
         }
         else
         {
-            x = Random.Range(-11f, 11f);
-            y = Random.Range(0f, 1f) > 0.5f ? 7f : -7f;
+            x = UnityEngine.Random.Range(-11f, 11f);
+            y = UnityEngine.Random.Range(0f, 1f) > 0.5f ? 7f : -7f;
         }
 
         return new Vector3(x, y, 0f);
@@ -75,5 +80,6 @@ public class EnemySpawner : MonoBehaviour
     public void KillEnemy(GameObject enemy)
     {
         enemy.SetActive(false);
+        OnEnemyDie?.Invoke();
     }
 }

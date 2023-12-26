@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 690242082915895615, guid: 70f581ff98da9204baebf2e3beebf6b9, type: 3}
-  initialPoolSize: 2
+  initialPoolSize: 10
   spawnOnSides: 0
 --- !u!1 &6410649651337439102
 GameObject:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5819540274332721429, guid: 95713ffb5a384a34b894a591e9ecca3c, type: 3}
-  initialPoolSize: 2
+  initialPoolSize: 10
   spawnOnSides: 0
 --- !u!1 &7069690330405384032
 GameObject:
@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &668775913088663376
 Transform:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6345433440154868398, guid: e6df2355b70191c4fbdd0e86fd5060bb, type: 3}
-  initialPoolSize: 1
+  initialPoolSize: 10
   spawnOnSides: 0
 --- !u!1 &7655286958067027137
 GameObject:
@@ -150,6 +150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3041483325672034679}
+  - component: {fileID: 1632882720301607170}
   m_Layer: 0
   m_Name: EnemySpawners
   m_TagString: Untagged
@@ -176,6 +177,47 @@ Transform:
   - {fileID: 5159832751535375507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632882720301607170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655286958067027137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdfb66676f71474db91ed852d47ba9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawners:
+  - enemySpawner: {fileID: 8434565633377810058}
+    timeToStartToSpawn: 0
+    currentCount: 0
+    limitEnemyAliveAtTheMoment: 2
+    maxLimitEnemyAliveAtThemoment: 50
+    increaseLimitEnemyAliveRate: 8
+    increaseLimitEnemyAliveQuantity: 1
+  - enemySpawner: {fileID: 5425043890387529226}
+    timeToStartToSpawn: 360
+    currentCount: 0
+    limitEnemyAliveAtTheMoment: 1
+    maxLimitEnemyAliveAtThemoment: 9
+    increaseLimitEnemyAliveRate: 25
+    increaseLimitEnemyAliveQuantity: 1
+  - enemySpawner: {fileID: 6004264097505523210}
+    timeToStartToSpawn: 60
+    currentCount: 0
+    limitEnemyAliveAtTheMoment: 2
+    maxLimitEnemyAliveAtThemoment: 15
+    increaseLimitEnemyAliveRate: 12
+    increaseLimitEnemyAliveQuantity: 1
+  - enemySpawner: {fileID: 5636301741690895612}
+    timeToStartToSpawn: 120
+    currentCount: 0
+    limitEnemyAliveAtTheMoment: 2
+    maxLimitEnemyAliveAtThemoment: 11
+    increaseLimitEnemyAliveRate: 15
+    increaseLimitEnemyAliveQuantity: 1
 --- !u!1 &8017528610005831501
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,5 +263,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4069601532384540071, guid: bd3c7cd35cc2c1b44b0bbc664585a09e, type: 3}
-  initialPoolSize: 3
+  initialPoolSize: 10
   spawnOnSides: 1
