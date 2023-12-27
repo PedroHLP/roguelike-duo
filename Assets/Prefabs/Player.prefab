@@ -5044,6 +5044,7 @@ GameObject:
   - component: {fileID: 7078723054322926434}
   - component: {fileID: 8111131243041555529}
   - component: {fileID: 1388128596713249987}
+  - component: {fileID: 3552662254363111680}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5167,6 +5168,19 @@ MonoBehaviour:
     baseProjectileSpeed: 4.5
     criticalChance: 5
     criticalDamageIncrease: 2
+--- !u!114 &3552662254363111680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707781148241002188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5aac4423bd57f46be73423db608430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpNeededToLevelUp: 070000000c0000000f000000150000001a0000002000000029000000350000003a000000
 --- !u!1 &5905495875359505806
 GameObject:
   m_ObjectHideFlags: 0

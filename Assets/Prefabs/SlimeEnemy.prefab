@@ -154,6 +154,9 @@ MonoBehaviour:
   speedDebuff: 0
   speedBuff: 0
   canWalk: 0
+  xpFragment: {fileID: 7817519789022465803, guid: 0f693c24d523fb54885b2a8b8279336c, type: 3}
+  xpDropMin: 5
+  xpDropMax: 10
 --- !u!50 &8941615132165784876
 Rigidbody2D:
   serializedVersion: 4

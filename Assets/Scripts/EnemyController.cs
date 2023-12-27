@@ -31,6 +31,12 @@ public class EnemyController : MonoBehaviour
     public float speedDebuff, speedBuff;
     public bool canWalk;
 
+    [SerializeField]
+    private GameObject xpFragment;
+
+    [SerializeField]
+    private int xpDropMin, xpDropMax;
+
     private void Start()
     {
         playerTransform = PlayerStatusHandler.Instance.gameObject.transform;
@@ -79,7 +85,7 @@ public class EnemyController : MonoBehaviour
         Material mat = GetComponent<Renderer>().material;
         mat.DisableKeyword("HITEFFECT_ON");
         speedDebuff = 1;
-        
+
         if (startingLife != 0)
             life = startingLife;
     }
@@ -112,6 +118,13 @@ public class EnemyController : MonoBehaviour
 
     private void Die()
     {
+        int xpDropCount = UnityEngine.Random.Range(xpDropMin, xpDropMax + 1);
+
+        for (int i = 0; i < xpDropCount; i++)
+        {
+            Instantiate(xpFragment, new Vector2(transform.position.x + UnityEngine.Random.Range(-0.4f, 0.4f), transform.position.y + UnityEngine.Random.Range(-0.4f, 0.4f)), quaternion.identity);
+        }
+
         myEnemySpawner.KillEnemy(this.gameObject);
     }
 
