@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c185642d2f3304cae2f73ffa0c2043, type: 3}
+  m_Name: Forhem's Icy Wheel
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 21300000, guid: d00802d156587fc4788e2ae0f6352d0f, type: 3}
+  itemName: Forhem's Icy Wheel
+  itemDescription: A slippery wheel that improves the cart's movement speed at <color=blue>10%</color>
+    <br> Also at the maximum level, it starts to create frost areas that <color=purple>slows
+    the enemies by 50%</color> of their movement speed.

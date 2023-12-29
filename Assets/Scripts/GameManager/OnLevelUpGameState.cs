@@ -6,7 +6,7 @@ public class OnLevelUpGameState : BaseGameState
 {
     public override void OnStateEnter(GameManager gameManager)
     {
-        GameUIHandler.Instance.ToggleLevelUpScreen();
+        GameUIHandler.Instance.ToggleLevelUpScreen(true);
         Time.timeScale = 0;
     }
 

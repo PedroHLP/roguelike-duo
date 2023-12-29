@@ -50,7 +50,6 @@ public class PlayerLevelUpController : MonoBehaviour
         {
             currentLevel++;
             OnLevelUp?.Invoke(currentLevel);
-            currentXpNeededToLevelUp = xpNeededToLevelUp[currentLevel];
             GameManager.Instance.ChangeGameState(GameState.OnLevelUp);
         }
     }
@@ -60,6 +59,7 @@ public class PlayerLevelUpController : MonoBehaviour
         if (gameState == GameState.Playing && GameManager.Instance.previousGameState == GameState.OnLevelUp)
         {
             currentXP -= currentXpNeededToLevelUp;
+            currentXpNeededToLevelUp = xpNeededToLevelUp[currentLevel];
             OnXPChange?.Invoke(currentXP, currentXpNeededToLevelUp);
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,9 @@ public class GameUIHandler : MonoBehaviour
     [SerializeField]
     private GameObject levelUpScreen;
 
+    [SerializeField]
+    private List<ItemCardButtonHandler> itemCardButtonHandlers;
+
     private void Awake()
     {
         Instance = this;
@@ -26,7 +30,6 @@ public class GameUIHandler : MonoBehaviour
         xpSlider.value = 0;
         PlayerLevelUpController.Instance.OnXPChange += UpdateSlider;
     }
-
     private void OnDisable()
     {
         PlayerLevelUpController.Instance.OnXPChange -= UpdateSlider;
@@ -35,9 +38,9 @@ public class GameUIHandler : MonoBehaviour
     private void UpdateSlider(int currentXP, int xpNeeded)
     {
         float currentSliderValue = currentXP / (float)xpNeeded;
-        xpSlider.value = currentSliderValue;
+        xpSlider.DOValue(currentSliderValue, 0.05f);
 
-        if (xpSlider.value != 1f)
+        if (currentSliderValue != 1f)
         {
             xpSliderFillImage.color = new Color(0.5181223f, 0.9528302f, 0.4449537f);
         }
@@ -47,8 +50,23 @@ public class GameUIHandler : MonoBehaviour
         }
     }
 
-    public void ToggleLevelUpScreen()
+    public void ToggleLevelUpScreen(bool show)
     {
-        levelUpScreen.SetActive(!levelUpScreen.activeSelf);
+        if (show)
+        {
+            levelUpScreen.SetActive(true);
+
+            List<BaseItem> itemsToShow = ItemsHandler.Instance.GetItemsToShowOnLevelUp(3);
+
+            for (int i = 0; i < itemsToShow.Count; i++)
+            {
+                itemCardButtonHandlers[i].SetUpItemCard(itemsToShow[i]);
+            }
+
+        }
+        else
+        {
+            levelUpScreen.SetActive(false);
+        }
     }
 }

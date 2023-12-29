@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1a712d164b960469f61255e1610efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousGameState: 0
   scrollingSpeed: 2
 --- !u!114 &2567386360396714431
 MonoBehaviour:
@@ -58,5 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f39912479e59b4295b193b601605c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allGameItems: []
+  allGameItems:
+  - {fileID: 3210154819850041560, guid: 82b4e5ff750dbbb4abdb6ae87b2c2fd4, type: 3}
+  - {fileID: 6448740056500320477, guid: b2a998fb3e17ccd48a6869da2877adae, type: 3}
+  - {fileID: 8598323517889984344, guid: 3778e0500949001449eac369e1265675, type: 3}
   allCurrentPlayerItems: []

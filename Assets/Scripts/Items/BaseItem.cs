@@ -5,18 +5,33 @@ using UnityEngine;
 public abstract class BaseItem : MonoBehaviour
 {
     public SOItem itemSO;
+    public int itemID;
+    public int itemCurrentStack;
 
-    public abstract PlayerStatusValues OnGetItem(PlayerStatusValues values);
+    [SerializeField]
+    private int itemMaxStack;
+
+    public abstract void OnGetItem();
     public abstract void OnPlayerShoot(Projectile shoottedBullet, GameObject shootPoint);
     public abstract void OnEverySecond();
     public abstract void OnPlayerDie();
     public abstract void OnPlayerKill();
     public abstract void OnPlayerLevelUp();
-    public abstract float OnPlayerCollectXP(float gainedXP);
+    public abstract void OnStackUp();
     public abstract void OnPlayerCriticalHit(Projectile shoottedBullet, GameObject shootPoint);
 
     public SOItem GetItemDetails()
     {
         return itemSO;
+    }
+
+    public int GetItemMaxStack()
+    {
+        return itemMaxStack;
+    }
+
+    public virtual string GetLevelStackDescription()
+    {
+        return "";
     }
 }
