@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item03 : BaseItem
+public class Item05 : BaseItem
 {
     public override void OnEverySecond()
     {
@@ -12,7 +12,7 @@ public class Item03 : BaseItem
     public override void OnGetItem()
     {
         PlayerStatusValues newValues = PlayerStatusHandler.Instance.statusValues;
-        newValues.criticalChance += 10f;
+        newValues.damage += 2f;
 
         PlayerStatusHandler.Instance.statusValues = newValues;
     }
@@ -44,10 +44,10 @@ public class Item03 : BaseItem
 
     public override void OnStackUp()
     {
-        float newCriticalChance = PlayerStatusHandler.Instance.statusValues.criticalChance;
+        float newDamage = PlayerStatusHandler.Instance.statusValues.damage;
 
-        newCriticalChance += 10f;
+        newDamage += 2f;
 
-        PlayerStatusHandler.Instance.statusValues.criticalChance = newCriticalChance;
+        PlayerStatusHandler.Instance.statusValues.damage = newDamage;
     }
 }

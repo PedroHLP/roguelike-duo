@@ -123,6 +123,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &177875951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707781148241002188, guid: ce3406e5c0963c14e85924273ae2acea, type: 3}
+  m_PrefabInstance: {fileID: 9191208591848946132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &177875958
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177875951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0998a0fc8f3796479c3acbfc1dfd06c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &200296628
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawners
       objectReference: {fileID: 0}
+    - target: {fileID: 7655286958067027137, guid: 9703f8da7f91fc24ca2fc326431b1b3f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1204,6 +1234,7 @@ MonoBehaviour:
   - {fileID: 374256807687214690}
   - {fileID: 3973351219444346460}
   - {fileID: 6187122073244224605}
+  currentLevelText: {fileID: 5183774974944778106}
 --- !u!224 &7669477011083538380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1811,7 +1842,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4707781148241002188, guid: ce3406e5c0963c14e85924273ae2acea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 177875958}
   m_SourcePrefab: {fileID: 100100000, guid: ce3406e5c0963c14e85924273ae2acea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

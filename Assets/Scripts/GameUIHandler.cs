@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,9 @@ public class GameUIHandler : MonoBehaviour
 
     [SerializeField]
     private List<ItemCardButtonHandler> itemCardButtonHandlers;
+
+    [SerializeField]
+    private TMP_Text currentLevelText;
 
     private void Awake()
     {
@@ -55,6 +59,7 @@ public class GameUIHandler : MonoBehaviour
         if (show)
         {
             levelUpScreen.SetActive(true);
+            currentLevelText.text = "Level - <b>" + PlayerLevelUpController.Instance.GetCurrentLevel() + "</b>";
 
             List<BaseItem> itemsToShow = ItemsHandler.Instance.GetItemsToShowOnLevelUp(3);
 

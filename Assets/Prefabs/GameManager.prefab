@@ -63,4 +63,6 @@ MonoBehaviour:
   - {fileID: 3210154819850041560, guid: 82b4e5ff750dbbb4abdb6ae87b2c2fd4, type: 3}
   - {fileID: 6448740056500320477, guid: b2a998fb3e17ccd48a6869da2877adae, type: 3}
   - {fileID: 8598323517889984344, guid: 3778e0500949001449eac369e1265675, type: 3}
+  - {fileID: 5469134386834064914, guid: c1e7c7aa8a593914aa123046e7ef22bf, type: 3}
+  - {fileID: 5827191233182290271, guid: f0256dbe905a9c042a46730518469845, type: 3}
   allCurrentPlayerItems: []

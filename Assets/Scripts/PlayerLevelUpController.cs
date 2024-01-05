@@ -63,4 +63,9 @@ public class PlayerLevelUpController : MonoBehaviour
             OnXPChange?.Invoke(currentXP, currentXpNeededToLevelUp);
         }
     }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
 }

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Variables
     private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 moveDirection;
     private Vector3 mousePosition;
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         statusHandler = PlayerStatusHandler.Instance;
         canShoot = true;
@@ -75,13 +77,14 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(ShootCoroutine());
 
-            int criticalRandomValue = UnityEngine.Random.Range(0, 100);
+            float criticalRandomValue = UnityEngine.Random.Range(0f, 100f);
 
             Vector2 direction = new Vector2(mousePosition.x - shootOriginPoint.transform.position.x, mousePosition.y - shootOriginPoint.transform.position.y);
             Projectile projectile = Instantiate(projectileObject, shootOriginPoint.transform.position, quaternion.identity).GetComponent<Projectile>();
             projectile.SetDir(direction);
             projectile.isCritical = criticalRandomValue <= statusHandler.statusValues.criticalChance;
 
+            animator.SetInteger("AnimState", 1);
         }
     }
 
@@ -103,7 +106,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator ShootCoroutine()
     {
         canShoot = false;
-        yield return new WaitForSeconds(1 / statusHandler.statusValues.attackSpeed);
+        yield return new WaitForSeconds(0.2f / statusHandler.statusValues.attackSpeed);
+        animator.SetInteger("AnimState", 0);
+        yield return new WaitForSeconds(0.8f / statusHandler.statusValues.attackSpeed);
         canShoot = true;
     }
 

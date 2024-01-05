@@ -33,6 +33,8 @@ public class Projectile : MonoBehaviour
         {
             EnemyController enemy = other.GetComponent<EnemyController>();
 
+            enemy.KnockBack(direction.normalized);
+
             if (!isCritical) enemy.DealDamage(damage, isCritical);
             else enemy.DealDamage(damage * pStatusHandler.statusValues.criticalDamageIncrease, isCritical);
 
